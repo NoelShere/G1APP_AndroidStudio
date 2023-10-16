@@ -1,5 +1,7 @@
 package com.noelistic.g1app;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,31 +18,37 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import com.google.android.gms.ads.MobileAds;
 import br.com.simplepass.loadingbutton.customViews.CircularProgressButton;
 import hotchemi.android.rate.AppRate;
 import hotchemi.android.rate.OnClickButtonListener;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private InterstitialAd mInterstitialAd;
     static int  checker = 0 ;
 
-
-
     //BottomNavigationView navigationView;
-
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -67,8 +75,75 @@ public class MainActivity extends AppCompatActivity {
         final CircularProgressButton download3 = findViewById(R.id.button2);
 
 
-
-
+//        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+//            @Override
+//            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+//        });
+//
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//
+//        InterstitialAd.load(this, "ca-app-pub-3940256099942544/1033173712", adRequest,
+//                new InterstitialAdLoadCallback() {
+//                    @Override
+//                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+//                        super.onAdFailedToLoad(loadAdError);
+//                        Log.d(TAG, loadAdError.toString());
+//                        mInterstitialAd = null;
+//                    }
+//
+//                    @Override
+//                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+//                        super.onAdLoaded(interstitialAd);
+//
+//                        mInterstitialAd = interstitialAd;
+//                        Log.i(TAG, "onAdLoaded");
+//                    }
+//                });
+//
+//
+//
+//        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+//            @Override
+//            public void onAdClicked() {
+//                // Called when a click is recorded for an ad.
+//                Log.d(TAG, "Ad was clicked.");
+//            }
+//
+//            @Override
+//            public void onAdDismissedFullScreenContent() {
+//                // Called when ad is dismissed.
+//                // Set the ad reference to null so you don't show the ad a second time.
+//                Log.d(TAG, "Ad dismissed fullscreen content.");
+//                mInterstitialAd = null;
+//            }
+//
+//            @Override
+//            public void onAdFailedToShowFullScreenContent(AdError adError) {
+//                // Called when ad fails to show.
+//                Log.e(TAG, "Ad failed to show fullscreen content.");
+//                mInterstitialAd = null;
+//            }
+//
+//            @Override
+//            public void onAdImpression() {
+//                // Called when an impression is recorded for an ad.
+//                Log.d(TAG, "Ad recorded an impression.");
+//            }
+//
+//            @Override
+//            public void onAdShowedFullScreenContent() {
+//                // Called when ad is shown.
+//                Log.d(TAG, "Ad showed fullscreen content.");
+//            }
+//        });
+//
+//
+//
+//        if (mInterstitialAd != null) {
+//            mInterstitialAd.show(MainActivity.this);
+//        } else {
+//            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+//        }
 
 //        MobileAds.initialize(this,"ca-app-pub-7447623152498928~1529239675");
 //        mInterstitialAd = new InterstitialAd(this);
@@ -246,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                        // Toast.makeText(getApplicationContext(),"Not Available Yet",Toast.LENGTH_SHORT).show();
-                        startQuiz3();;
+                        startQuiz3();
                         // this stops the crashes
                         test3.revertAnimation();
                         test3.setBackgroundResource(R.drawable.mainbuttons);

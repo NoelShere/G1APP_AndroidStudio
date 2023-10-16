@@ -32,7 +32,7 @@ public class ScoreScreen extends AppCompatActivity {
     private int mScoreT5 = 0;
     private int mScoreT6 = 0;
 
-    AlertDialog.Builder builder;
+    AlertDialog.Builder builder; //SCORE CARD
     private InterstitialAd mInterstitialAd;
 
     @Override
@@ -53,23 +53,24 @@ public class ScoreScreen extends AppCompatActivity {
         getSupportActionBar().hide(); // to hide the top bar only for this activity
 
         builder = new AlertDialog.Builder(this);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        // ad code ca-app-pub-7447623152498928/3466344122
 
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+        AdRequest adRequest = new AdRequest.Builder().build();
+        // ad code ca-app-pub-7447623152498928/3466344122 // MY AD ID
+
+        InterstitialAd.load(this,"ca-app-pub-7447623152498928/3466344122", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                         // The mInterstitialAd reference will be null until
                         // an ad is loaded.
                         mInterstitialAd = interstitialAd;
-                        Log.i(TAG, "onAdLoaded");
+                        Log.d("HELLO", "onAdLoaded");
                     }
 
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                         // Handle the error
-                        Log.d(TAG, loadAdError.toString());
+                        Log.d("HELLO", loadAdError.toString());
                         mInterstitialAd = null;
                     }
                 });
@@ -101,7 +102,7 @@ public class ScoreScreen extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent intent = new Intent(ScoreScreen.this, MainActivity.class);
-
+                                        ShowAD();
                                         startActivity(intent);
                                     }
                                 });
@@ -117,7 +118,7 @@ public class ScoreScreen extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent intent = new Intent(ScoreScreen.this, MainActivity.class);
-
+                                        ShowAD();
                                         startActivity(intent);
                                     }
                                 });
@@ -131,7 +132,7 @@ public class ScoreScreen extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent intent = new Intent(ScoreScreen.this, MainActivity.class);
-
+                                        ShowAD();
                                         startActivity(intent);
                                     }
                                 });
@@ -145,7 +146,7 @@ public class ScoreScreen extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent intent = new Intent(ScoreScreen.this, MainActivity.class);
-
+                                        ShowAD();
                                         startActivity(intent);
                                     }
                                 });
@@ -159,7 +160,7 @@ public class ScoreScreen extends AppCompatActivity {
                                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent intent = new Intent(ScoreScreen.this, MainActivity.class);
-
+                                        ShowAD();
                                         startActivity(intent);
                                     }
                                 });
@@ -174,12 +175,9 @@ public class ScoreScreen extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int id) {
                                         Intent intent = new Intent(ScoreScreen.this, MainActivity.class);
 
-                                        if (mInterstitialAd != null) {
-                                            mInterstitialAd.show(ScoreScreen.this);
-                                            startActivity(intent);
-                                        } else {
-                                            Log.d("TAG", "The interstitial ad wasn't ready yet.");
-                                        }
+                                        ShowAD();
+                                        startActivity(intent);
+
 
 
 
@@ -197,5 +195,16 @@ public class ScoreScreen extends AppCompatActivity {
     }
 
     //show ad function
+
+    public void  ShowAD(){
+
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show( ScoreScreen.this);
+            Log.d("HELLO", "add should be showing!");
+
+        } else {
+            Log.d("HELLO", "The interstitial ad wasn't ready yet.");
+        }
+    }
 
 }

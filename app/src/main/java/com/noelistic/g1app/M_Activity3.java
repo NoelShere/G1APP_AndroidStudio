@@ -101,13 +101,5 @@ public class M_Activity3 extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
-
 }
 
