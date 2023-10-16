@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#01818A</color>
+    <color name="colorPrimaryDark">#01818A</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBackground">#1B1919</color>
+    <color name="passedColor">#2A8B04</color>
+    <color name="FailedColor">#BD0808</color>
+    <color name="btclor">#C5931C</color>
+    <color name="on">#DF0D26</color>
+    <color name="off">#DFB82D</color>
+
+</resources>

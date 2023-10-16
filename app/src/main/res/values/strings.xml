@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">G1 Test</string>
+    <string name="t1">Practice Test #1 |  Difficulty: Easy</string>
+    <string name="t2">Practice Test #2 |  Difficulty: Medium</string>
+    <string name="t3">Practice Test #3 |  Difficulty: Hard</string>
+    <string name="y1">Practice Test #1 |  Difficulty: Easy</string>
+    <string name="y2">Practice Test #2 |  Difficulty: Medium</string>
+    <string name="y3">Practice Test #3 |  Difficulty: Hard</string>
+    <string name="google_map_key">AIzaSyC7TAuApR0Dg0VwRdo8PSKSJ-hW5DLic_8</string>
+    <string name="new_rate_dialog_message">If you enjoy our app, would you mind taking a moment to rate it? It will not take more than a minute. Thanks for your support!</string>
+
+
+</resources>

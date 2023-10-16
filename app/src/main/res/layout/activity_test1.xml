@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#45A7AE"
+    android:gravity="end"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Test1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/score_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Score"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                android:text="This is a test question?"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:padding="20dp"
+                android:text="yes"
+                android:textColor="#000">
+
+            </Button>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:padding="20dp"
+                android:text="No"
+                android:textColor="#000">
+
+            </Button>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:padding="20dp"
+                android:text="Maybe"
+                android:textColor="#000">
+
+            </Button>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_button"
+                android:padding="20dp"
+                android:text="-"
+                android:textColor="#000">
+
+
+
+            </Button>
+
+            <Button
+                android:id="@+id/nextquestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/mainpagebackground"
+                android:padding="10dp"
+                android:text="Next Question" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

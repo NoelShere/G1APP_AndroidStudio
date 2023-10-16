@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.noelistic.g1app">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/g1logo2"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".M_Activity3"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7447623152498928~1529239675" />
+
+        <activity android:name=".ScoreScreen" />
+        <activity android:name=".Test6" />
+        <activity android:name=".Test5" />
+        <activity android:name=".Test4" />
+        <activity android:name=".Test3" />
+        <activity android:name=".Test2" />
+        <activity android:name=".Test1" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".flashscreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
